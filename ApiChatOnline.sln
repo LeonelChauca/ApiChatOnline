@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiChatOnline", "ApiChatOnline.csproj", "{9AB00430-364B-FA69-205B-FE038BF7AD76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AB00430-364B-FA69-205B-FE038BF7AD76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB00430-364B-FA69-205B-FE038BF7AD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB00430-364B-FA69-205B-FE038BF7AD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB00430-364B-FA69-205B-FE038BF7AD76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB31DC52-CFEF-4CC9-97A9-BFEA4102A404}
+	EndGlobalSection
+EndGlobal
