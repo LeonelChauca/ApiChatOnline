@@ -9,6 +9,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,9 +24,11 @@ builder.Services.AddDbContext<MongoDbContext>(options =>
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuhService>();
 builder.Services.AddSingleton<IEncryptService, EncryptService>();
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi()   
+    .AddJwtOpenApi();
 builder.Services.AddValidatorsFromAssemblyContaining<UserCreateDtoValidation>();
 builder.Services.AddFluentValidationAutoValidation();
 var config = TypeAdapterConfig.GlobalSettings;
