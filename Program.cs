@@ -27,8 +27,22 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuhService>();
 builder.Services.AddSingleton<IEncryptService, EncryptService>();
 builder.Services.AddControllers();
-builder.Services.AddOpenApi()   
-    .AddJwtOpenApi();
+builder.Services.AddOpenApi().AddJwtOpenApi();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        "AllowAngularApp",
+        policy =>
+        {
+            policy
+                .WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials();
+        }
+    );
+});
 builder.Services.AddValidatorsFromAssemblyContaining<UserCreateDtoValidation>();
 builder.Services.AddFluentValidationAutoValidation();
 var config = TypeAdapterConfig.GlobalSettings;
@@ -37,6 +51,8 @@ builder.Services.AddSingleton(config);
 builder.Services.AddJwtAuthentication(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseCors("AllowAngularApp");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
