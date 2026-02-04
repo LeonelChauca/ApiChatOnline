@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Text;
+using ApiChatOnline.config.HandleErrors;
 using ApiChatOnline.Models.Dtos.Auth;
 using ApiChatOnline.Models.Dtos.User;
 using ApiChatOnline.Models.Entities;
@@ -36,13 +37,13 @@ public class AuhService : IAuthService
 
         if (user == null)
         {
-            throw new Exception("User not found");
+            throw new HandleNotFound("Usuario o contraseña incorrecta");
         }
         var ispassCorrect = _encryptService.VerifyPassword(loginDto.Password, user.Password);
 
         if (!ispassCorrect)
         {
-            throw new Exception("Incorrect password");
+            throw new HandleNotFound("Usuario o contraseña incorrecta");
         }
         var token = GenerateToken(user);
 

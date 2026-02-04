@@ -1,6 +1,7 @@
 using ApiChatOnline.Controllers.Validations;
 using ApiChatOnline.Data;
 using ApiChatOnline.Extensions;
+using ApiChatOnline.Middlewares;
 using ApiChatOnline.Repository;
 using ApiChatOnline.Repository.IRepository;
 using ApiChatOnline.Services;
@@ -53,6 +54,7 @@ builder.Services.AddJwtAuthentication(builder.Configuration);
 var app = builder.Build();
 
 app.UseCors("AllowAngularApp");
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

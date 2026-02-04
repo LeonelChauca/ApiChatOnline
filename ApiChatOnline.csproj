@@ -24,10 +24,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="config/" />
+    <Folder Include="config/HandleErrors/" />
+    <Folder Include="config/Response/" />
     <Folder Include="Data\" />
     <Folder Include="Data\Config\" />
     <Folder Include="Extensions\" />
     <Folder Include="Mappers\" />
+    <Folder Include="Middlewares/" />
     <Folder Include="Models\Dtos\" />
     <Folder Include="Models\Dtos\Auth\" />
     <Folder Include="Models\Dtos\User\" />

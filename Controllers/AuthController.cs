@@ -1,3 +1,4 @@
+using ApiChatOnline.Extensions;
 using ApiChatOnline.Models.Dtos.Auth;
 using ApiChatOnline.Services.IServices;
 using Microsoft.AspNetCore.Http;
@@ -21,7 +22,7 @@ namespace ApiChatOnline.Controllers
         {
             var loginOk = await _authService.LoginAuth(loginDto);
 
-            return Ok(loginOk);
+            return loginOk.ToOkResponse("Ingreso Correcto");
         }
     }
 }

@@ -25,4 +25,8 @@ public class User
     [BsonElement("conversationsIds")]
     [BsonRepresentation(MongoDB.Bson.BsonType.String)]
     public List<Guid> ConversationsIds { get; set; } = new List<Guid>();
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    public DateTime LastSeen { get; set; } = DateTime.UtcNow;
 }

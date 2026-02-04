@@ -1,3 +1,4 @@
+using ApiChatOnline.Extensions;
 using ApiChatOnline.Models.Dtos.User;
 using ApiChatOnline.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
@@ -20,7 +21,11 @@ namespace ApiChatOnline.Controllers
         public async Task<IActionResult> CreateUser([FromBody] CreateUserDto userDto)
         {
             var userCreated = await _userService.CreateUserAsync(userDto);
-            return Ok(userCreated);
+            return userCreated.ToCreatedResponse(
+                "Usuario creado correctamente",
+                nameof(GetUsers),
+                new { idUser = userCreated.UserId }
+            );
         }
 
         [Authorize]
@@ -28,7 +33,7 @@ namespace ApiChatOnline.Controllers
         public async Task<IActionResult> GetUsers()
         {
             var users = await _userService.GetUsersAsync();
-            return Ok(users);
+            return users.ToOkResponse("Lista de usuarios obtenida correctamente");
         }
     }
 }
