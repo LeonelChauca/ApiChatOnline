@@ -1,6 +1,7 @@
 using ApiChatOnline.Controllers.Validations;
 using ApiChatOnline.Data;
 using ApiChatOnline.Extensions;
+using ApiChatOnline.Hubs;
 using ApiChatOnline.Middlewares;
 using ApiChatOnline.Repository;
 using ApiChatOnline.Repository.IRepository;
@@ -46,6 +47,7 @@ builder.Services.AddCors(options =>
 });
 builder.Services.AddValidatorsFromAssemblyContaining<UserCreateDtoValidation>();
 builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddSignalR();
 var config = TypeAdapterConfig.GlobalSettings;
 builder.Services.AddSingleton(config);
 
@@ -61,6 +63,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.MapHub<ChatHub>("/chatHub");
 app.MapScalarApiReference();
 app.UseHttpsRedirection();
 

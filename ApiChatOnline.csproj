@@ -30,6 +30,7 @@
     <Folder Include="Data\" />
     <Folder Include="Data\Config\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Hubs/" />
     <Folder Include="Mappers\" />
     <Folder Include="Middlewares/" />
     <Folder Include="Models\Dtos\" />

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiChatOnline")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d7b0a0e7bfd929d0c53d3ebb1ad2832265d971d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10b4ca14b29d9382b009a048452c46be4242e821")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiChatOnline")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiChatOnline")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
